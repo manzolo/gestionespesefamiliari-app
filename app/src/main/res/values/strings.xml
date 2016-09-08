@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gestione spese familiari</string>
+
+    <string name="title_activity_splash">Gestione spese familiari</string>
+    <string name="title_activity_display_menu">DisplayMenuActivity</string>
+    <string name="title_activity_login">Gestione spese familiari</string>
+    <string name="title_activity_display_riepilogo">Riepilogo ordine</string>
+    <string name="title_activity_splash_screen">Gestione spese familiati</string>
+
+    <string name="connectionStatus">Nessuna connessione internet</string>
+    <string name="lblUsername">Username</string>
+    <string name="lblPassword">Password</string>
+
+    <string name="btnAccedi">Accedi</string>
+    <string name="btnEsci">Uscita</string>
+    <string name="refresh">Aggiorna</string>
+    <string name="title_activity_ultimi_movimeniti">UltimiMovimenitiActivity</string>
+    <string name="title_activity_update_app">UpdateAppActivity</string>
+
+    <string name="updateapp">Aggiornamento app...</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ultimi_movimenti"
+        android:title="Ultimi Movimenti"></item>
+    <item
+        android:id="@+id/aggiorna"
+        android:title="Aggiorna elenchi"></item>
+
+
+</menu>
