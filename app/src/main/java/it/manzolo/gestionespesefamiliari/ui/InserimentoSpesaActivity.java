@@ -6,8 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -236,7 +238,9 @@ public class InserimentoSpesaActivity extends ActionBarActivity {
                         Log.i("info", String.valueOf(tipologia));
                         form.add(new BasicNameValuePair("nota", nota));
                         Log.i("info", String.valueOf(nota));
-                        Internet request = new Internet(GestionespesefammiliariUrls.REGISTRA_SPESA_PAGE, Internet.METHOD_POST);
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        String hosturl = prefs.getString("host_url_text", "");
+                        Internet request = new Internet(hosturl+GestionespesefammiliariUrls.REGISTRA_SPESA_PAGE, Internet.METHOD_POST);
 
                         try {
                             String responseText = request.getPostResponse(new UrlEncodedFormEntity(form));

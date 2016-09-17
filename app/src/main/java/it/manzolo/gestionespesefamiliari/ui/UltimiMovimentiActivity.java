@@ -2,8 +2,10 @@ package it.manzolo.gestionespesefamiliari.ui;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
 import android.view.View;
@@ -55,7 +57,10 @@ public class UltimiMovimentiActivity extends ActionBarActivity {
 
     public void getUlimiMovimenti() {
         StringBuilder sbUrl = new StringBuilder();
-        sbUrl.append(GestionespesefammiliariUrls.ULTIMI_MOVIMENTI_PAGE).append("?utenteid=").append(String.valueOf(utenteloggato.getId()));
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String hosturl = prefs.getString("host_url_text", "");
+
+        sbUrl.append(hosturl+GestionespesefammiliariUrls.ULTIMI_MOVIMENTI_PAGE).append("?utenteid=").append(String.valueOf(utenteloggato.getId()));
         String url = sbUrl.toString();
         LinearLayout rl = (LinearLayout) findViewById(R.id.scrollLinearLayout);
         rl.removeAllViews();
@@ -103,7 +108,9 @@ public class UltimiMovimentiActivity extends ActionBarActivity {
                             new MessageBox(UltimiMovimentiActivity.this, "Attenzione", "Seleziona almeno un movimento!");
                             return;
                         }
-                        Internet request = new Internet(GestionespesefammiliariUrls.ELIMINA_MOVIMENTO_PAGE, Internet.METHOD_POST);
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        String hosturl = prefs.getString("host_url_text", "");
+                        Internet request = new Internet(hosturl+GestionespesefammiliariUrls.ELIMINA_MOVIMENTO_PAGE, Internet.METHOD_POST);
                         try {
                             String responseText = request.getPostResponse(new UrlEncodedFormEntity(selezionati));
                             new ToolTip(UltimiMovimentiActivity.this, "Cancellazione effettuata", true);
