@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="it.manzolo.gestionespesefamiliari"
     android:versionCode="1"
-    android:versionName="1.2.0.0">
+    android:versionName="1.2.0.2">
 
 <uses-sdk
         android:minSdkVersion="10"

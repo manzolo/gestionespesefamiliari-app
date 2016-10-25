@@ -128,7 +128,8 @@
                 android:layout_alignRight="@+id/invia"
                 android:layout_below="@+id/invia"
                 android:calendarViewShown="false"
-                android:spinnersShown="true" />
+                android:spinnersShown="true"
+                android:datePickerMode="spinner" />
 
         </RelativeLayout>
     </LinearLayout>
