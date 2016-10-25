@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -259,6 +262,26 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settings_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     @Override
     public void onDestroy() {
         unregisterReceiver(updateConnectionStatusUiReceiver);

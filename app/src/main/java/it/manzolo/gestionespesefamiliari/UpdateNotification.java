@@ -5,7 +5,9 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -22,7 +24,11 @@ public class UpdateNotification {
             this.context = ctx;
             String versionCode;
             versionCode = this.context.getPackageManager().getPackageInfo(this.context.getPackageName(), 0).versionName;
-            String webVersion = new Internet(GestionespesefammiliariUrls.APP_VERSION_PAGE).getResponse();
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+            // then you use
+            String hosturl = prefs.getString("host_url_text", "");
+
+            String webVersion = new Internet(hosturl + GestionespesefammiliariUrls.APP_VERSION_PAGE).getResponse();
             //Log.i("cur", versionCode);Log.i("web",webVersion);
             if (versionCompare(webVersion, versionCode) > 0) {
                 NotifyNewRelease(versionCode, webVersion);

@@ -1,6 +1,8 @@
 package it.manzolo.gestionespesefamiliari.gestione;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -85,7 +87,9 @@ public class Utente implements Serializable {
             List<NameValuePair> form = new ArrayList<>();
             form.add(new BasicNameValuePair("username", getUsername()));
             form.add(new BasicNameValuePair("password", getPassword()));
-            Internet request = new Internet(GestionespesefammiliariUrls.LOGIN_PAGE, Internet.METHOD_POST);
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+            String hosturl = prefs.getString("host_url_text", "");
+            Internet request = new Internet(hosturl + GestionespesefammiliariUrls.LOGIN_PAGE, Internet.METHOD_POST);
             String responseText = request.getPostResponse(new UrlEncodedFormEntity(form));
 
             //Log.i("Parse response", responseText);

@@ -1,6 +1,8 @@
 package it.manzolo.gestionespesefamiliari.gestione;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +25,10 @@ public class SerializzaElenchi {
         ArrayList<Tipologia> tipologie = new ArrayList<Tipologia>();
         ArrayList<Tipomovimento> tipimovimento = new ArrayList<Tipomovimento>();
         try {
-            retval = new Internet(GestionespesefammiliariUrls.GET_TIPOLOGIE_PAGE).getJSONObject();
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+            String hosturl = prefs.getString("host_url_text", "");
+
+            retval = new Internet(hosturl + GestionespesefammiliariUrls.GET_TIPOLOGIE_PAGE).getJSONObject();
         } catch (Exception e) {
             e.printStackTrace();
             return;
@@ -54,7 +59,11 @@ public class SerializzaElenchi {
 
 
         try {
-            retval = new Internet(GestionespesefammiliariUrls.GET_TIPIMOVIMENTO_PAGE).getJSONObject();
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+            String hosturl = prefs.getString("host_url_text", "");
+
+
+            retval = new Internet(hosturl + GestionespesefammiliariUrls.GET_TIPIMOVIMENTO_PAGE).getJSONObject();
         } catch (Exception e) {
             e.printStackTrace();
             return;
