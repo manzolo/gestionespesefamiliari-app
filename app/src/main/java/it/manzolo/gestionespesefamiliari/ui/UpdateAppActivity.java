@@ -9,7 +9,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import java.io.File;
 
@@ -17,7 +17,7 @@ import it.manzolo.gestionespesefamiliari.R;
 import it.manzolo.gestionespesefamiliari.parameters.GestionespesefammiliariUrls;
 import it.manzolo.gestionespesefamiliari.service.DownloadService;
 
-public class UpdateAppActivity extends ActionBarActivity {
+public class UpdateAppActivity extends AppCompatActivity {
 
     // declare the dialog as a member field of your activity
     ProgressDialog mProgressDialog;

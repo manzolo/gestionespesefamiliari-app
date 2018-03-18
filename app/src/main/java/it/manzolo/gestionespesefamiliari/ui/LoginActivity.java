@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,7 +27,7 @@ import it.manzolo.gestionespesefamiliari.gestione.Utente;
 import it.manzolo.gestionespesefamiliari.service.NetworkChangeReceiver;
 import it.manzolo.utils.ToolTip;
 
-public class LoginActivity extends ActionBarActivity {
+public class LoginActivity extends AppCompatActivity {
 
     static final String NETWORK_CONNECTION_CHANGE = "it.manzolo.gestionespesefamiliari.NetworkConnectionChange";
     static boolean LAST_NETWORKSTATUS;

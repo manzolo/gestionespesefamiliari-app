@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +30,7 @@ import it.manzolo.utils.Internet;
 import it.manzolo.utils.MessageBox;
 import it.manzolo.utils.ToolTip;
 
-public class UltimiMovimentiActivity extends ActionBarActivity {
+public class UltimiMovimentiActivity extends AppCompatActivity {
 
     List<NameValuePair> movimenti = new ArrayList<NameValuePair>();
     private Utente utenteloggato;

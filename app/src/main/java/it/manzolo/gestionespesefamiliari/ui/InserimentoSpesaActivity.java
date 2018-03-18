@@ -10,7 +10,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -48,7 +48,7 @@ import it.manzolo.utils.Internet;
 import it.manzolo.utils.MessageBox;
 import it.manzolo.utils.ToolTip;
 
-public class InserimentoSpesaActivity extends ActionBarActivity {
+public class InserimentoSpesaActivity extends AppCompatActivity {
 
     static final String NETWORK_CONNECTION_CHANGE = "it.manzolo.gestionespesefamiliari.NetworkConnectionChange";
     static boolean LAST_NETWORKSTATUS;
